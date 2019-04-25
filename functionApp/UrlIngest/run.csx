@@ -25,8 +25,6 @@ public static string Encode(int i)
             return string.Join(string.Empty, s.Reverse());
 }
 
-public static string[] UTM_MEDIUMS=new [] {"twitter", "facebook", "linkedin", "googleplus"};
-
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, NextId keyTable, CloudTable tableOut, TraceWriter log)
 {
     log.Info($"C# manually triggered function called with req: {req}");
@@ -37,6 +35,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, NextId
     }
 
     Request input = await req.Content.ReadAsAsync<Request>();
+    log.Info($"Input: {input}");
 
     if (input == null)
     {
