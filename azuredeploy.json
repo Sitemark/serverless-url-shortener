@@ -74,7 +74,7 @@
       "type": "Microsoft.Storage/storageAccounts",
       "name": "[variables('storageAccountName')]",
       "apiVersion": "2016-01-01",
-      "location": "[resourceGroup().location]",
+      "location": "northeurope",
       "kind": "Storage",
       "sku": {
         "name": "[parameters('storageAccountType')]"
@@ -84,7 +84,7 @@
       "type": "Microsoft.Web/serverfarms",
       "apiVersion": "2016-09-01",
       "name": "[variables('hostingPlanName')]",
-      "location": "[resourceGroup().location]",
+      "location": "northeurope",
       "sku": {
         "name": "Y1",
         "tier": "Dynamic",
@@ -101,7 +101,7 @@
       "type": "Microsoft.Web/sites",
       "apiVersion": "2016-08-01",
       "name": "[parameters('siteName')]",
-      "location": "[resourceGroup().location]",
+      "location": "northeurope",
       "kind": "functionapp",
       "properties": {
         "name": "[parameters('siteName')]",
