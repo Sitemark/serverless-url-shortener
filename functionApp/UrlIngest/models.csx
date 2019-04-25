@@ -11,14 +11,13 @@ public class ShortUrl : TableEntity
     public string Medium { get; set; }
 }
 
-public class Request 
+public class Request
 {
-    public bool? TagSource { get; set; }
-    public bool? TagMediums { get; set; }
+    public string? CustomBackHalf { get; set; }
     public string Input { get; set; }
 }
 
-public class Result 
+public class Result
 {
     public string ShortUrl { get; set; }
     public string LongUrl { get; set; }
