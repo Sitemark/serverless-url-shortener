@@ -8,13 +8,6 @@
       "route": "UrlRedirect/{shortUrl}"
     },
     {
-      "authLevel": "anonymous",
-      "name": "req2",
-      "type": "httpTrigger",
-      "direction": "in",
-      "route": "UrlRedirect"
-    },
-    {
       "name": "$return",
       "type": "http",
       "direction": "out"
