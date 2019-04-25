@@ -44,7 +44,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, NextId
 
     var result = new List<Result>();
     var url = input.Input;
-    var customBackHalf = input.CustomBackHalf;
+    var customBackHalf = input.CustomBackHalf.hasValue ? input.CustomBackHalf.Value : false;
 
     if (String.IsNullOrWhiteSpace(url))
     {
