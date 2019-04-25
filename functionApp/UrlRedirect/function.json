@@ -5,7 +5,14 @@
       "name": "req",
       "type": "httpTrigger",
       "direction": "in",
-      "route": "UrlRedirect/{*shortUrl}"
+      "route": "UrlRedirect/{shortUrl}"
+    },
+    {
+      "authLevel": "anonymous",
+      "name": "req2",
+      "type": "httpTrigger",
+      "direction": "in",
+      "route": "UrlRedirect"
     },
     {
       "name": "$return",
