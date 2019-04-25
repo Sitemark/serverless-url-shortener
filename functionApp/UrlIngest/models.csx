@@ -13,7 +13,7 @@ public class ShortUrl : TableEntity
 
 public class Request
 {
-    public string? CustomBackHalf { get; set; }
+    public string CustomBackHalf { get; set; }
     public string Input { get; set; }
 }
 

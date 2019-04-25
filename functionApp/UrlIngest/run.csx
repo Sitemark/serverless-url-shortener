@@ -44,7 +44,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, NextId
 
     var result = new List<Result>();
     var url = input.Input;
-    var customBackHalf = input.CustomBackHalf.HasValue ? input.CustomBackHalf.Value : false;
+    var customBackHalf = input.CustomBackHalf;
 
     if (String.IsNullOrWhiteSpace(url))
     {
@@ -65,7 +65,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, NextId
 
     log.Info($"Current key: {keyTable.Id}");
 
-    var shortUrl = customBackHalf ? customBackHalf : Encode(keyTable.Id++);
+    var shortUrl = customBackHalf !== "" ? customBackHalf : Encode(keyTable.Id++);
     log.Info($"Short URL for {url} is {shortUrl}");
     var newUrl = new ShortUrl
     {
