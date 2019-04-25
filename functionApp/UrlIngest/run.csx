@@ -65,7 +65,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, NextId
 
     log.Info($"Current key: {keyTable.Id}");
 
-    var shortUrl = customBackHalf !== "" ? customBackHalf : Encode(keyTable.Id++);
+    var shortUrl = String.IsNullOrEmpty(customBackHalf) ? Encode(keyTable.Id++) : customBackHalf;
     log.Info($"Short URL for {url} is {shortUrl}");
     var newUrl = new ShortUrl
     {
