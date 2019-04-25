@@ -3,9 +3,15 @@
   "proxies": {
     "Domain Redirect": {
       "matchCondition": {
-        "route": "/{*shortUrl}"
+        "route": "/{shortUrl}"
       },
       "backendUri": "http://%WEBSITE_HOSTNAME%/api/UrlRedirect/{shortUrl}"
+    },
+    "Domain Fallback": {
+      "matchCondition": {
+        "route": "/"
+      },
+      "backendUri": "http://%WEBSITE_HOSTNAME%/api/UrlRedirect/"
     }
   }
 }
